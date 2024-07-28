@@ -381,8 +381,7 @@ credit_union_data_final$Entity<-"CU"
 credit_union_data_final<-credit_union_data_final %>%
   filter(uid!="Cornerstone.2016")
 
-# write.xlsx2(credit_union_data_check, "C:/Users/rizvi/University of Saskatchewan/New folder/error_list/credit_union_data.xlsx",
-#             row.names = FALSE, sheetName = "No rank", append = TRUE,overwrite=TRUE)
+
 setwd("")
 setwd("")
 credit_union_data_final_unprocessed<-credit_union_data_final
@@ -419,8 +418,8 @@ for (i in 2:length(dic_list_bank)) {
 file_data_bank$file_list_1<-file_data_bank$file_list_bank
 file_data_bank$file_list_bank<-gsub("\\s+","", file_data_bank$file_list_bank)
 file_data_bank$Bank_Name<-NA
-setwd("C:/Users/map826/OneDrive - University of Saskatchewan/Career/Writing/Credit Unions/Credit Union COVID Behaviour/Data")
-setwd("C:/Users/rizvi/University of Saskatchewan/Pigeon, Marc-Andre - Credit Union COVID Behaviour/Data")
+setwd("")
+setwd("")
 name_Bank <- read_excel("Data Frame.xlsx",sheet = "Name_Bank")
 name<-name_Bank$S.name
 for (i in 1:nrow(file_data_bank)) {
@@ -488,11 +487,7 @@ bank_data_final_unprocessed<-bank_data_final
 save(bank_data_final_unprocessed, file = "Our data/bank_data_final_unprocessed.RData")
 
 #### Merge CU and Bank
-# rm(list = ls())
-# library(dplyr)
-# setwd("C:/Users/rizvi/University of Saskatchewan/Pigeon, Marc-Andre - Credit Union COVID Behaviour/Data")
-# load("Our data/credit_union_data_final.RData")
-# load("Our data/bank_data_final.RData")
+
 bank_data_final<-rename(bank_data_final,c("Name"="Bank.Name"))
 credit_union_data_final<-credit_union_data_final%>%
   select(-Membership,-location)
